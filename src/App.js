@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import Child from "./child";
 
 function App() {
+  let [isOn, setIsOn] = useState(false);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className=" mt-5 text-center">
+      <h1>Room</h1>
+
+      <h3>
+        {isOn ? "The room is bright" : "The room is dark"}
+      </h3>
+
+      <Child isOn={isOn} setIsOn={setIsOn} />
     </div>
+
   );
 }
 
